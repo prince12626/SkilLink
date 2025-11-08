@@ -7,9 +7,8 @@ import { useServices } from './context/ServiceContext'
 import Service from './pages/Service'
 
 const App = () => {
-  const data = useServices();
   return (
-    <div className='bg-[#151A28] relative h-screen w-screen'>
+    <div className='bg-[#151A28] relative h-auto w-screen'>
       <Navbar />
       <Routes>
         <Route path='/auth/login' element={<Login />} />

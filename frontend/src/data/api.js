@@ -1,1 +1,3 @@
-export const uri = 'http://localhost:5000/api/v1';
+const uri = 'http://localhost:5000';
+
+export default uri;

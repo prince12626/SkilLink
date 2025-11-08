@@ -1,12 +1,10 @@
-import React, { useContext } from 'react'
 import Navbar from './components/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import Login from './pages/Login'
 import { Signup } from './pages/Signup'
-import { useServices } from './context/ServiceContext'
 import Service from './pages/Service'
 
-const App = () => {
+export const App = () => {
   return (
     <div className='bg-[#151A28] relative h-auto w-screen'>
       <Navbar />
@@ -18,5 +16,3 @@ const App = () => {
     </div>
   )
 }
-
-export default App

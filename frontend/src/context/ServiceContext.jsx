@@ -4,11 +4,12 @@ import { uri } from "../data/api"
 
 const serviceContext = createContext();
 
+
 const ServiceProvider = ({ children }) => {
   const [services, setServices] = useState([])
   const getServices = async () => {
     const res = await axios.get(uri + "/service/getall");
-      setServices(res);
+      setServices(res.data);
   }
 
   useEffect(() => {
@@ -16,7 +17,7 @@ const ServiceProvider = ({ children }) => {
   }, [])
 
   return (
-    <serviceContext.Provider value={services}>
+    <serviceContext.Provider value={{services}}>
       {children}
     </serviceContext.Provider>
   )
@@ -25,5 +26,5 @@ const ServiceProvider = ({ children }) => {
 export default ServiceProvider
 
 export const useServices = () => {
-  useContext(serviceContext)
+  return useContext(serviceContext)
 }

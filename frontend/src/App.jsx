@@ -4,9 +4,9 @@ import { Route, Routes } from 'react-router-dom'
 import Login from './pages/Login'
 import {Signup} from './pages/Signup'
 
-const App = () => {
+export const App = () => {
   return (
-    <div className='bg-[#151A28] relative h-screen w-screen'>
+    <div className='bg-[#151A28] relative h-auto w-screen'>
       <Navbar />
         <Routes>
           <Route path='/auth/login' element={<Login />} />

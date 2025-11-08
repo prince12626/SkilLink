@@ -13,7 +13,7 @@ const Login = () => {
   })
 
   const [loading, setLoading] = useState(false)
-  const [role, setRole] = useState('user') // 'user' or 'freelancer'
+  const [role, setRole] = useState('user')
 
   const handleChange = (e) => {
     setFormData({

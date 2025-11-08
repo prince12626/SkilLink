@@ -10,6 +10,10 @@ app.use(express.urlencoded({ extended: true }));
 
 require('./config/db')();
 
+const authRoutes = require('./routes/auth.routes')
+
+app.use(authRoutes);
+
 app.get('/api/health', (req, res) => {
             try {
                         res.status(201).json({ message: 'API working fine.' });
@@ -18,5 +22,7 @@ app.get('/api/health', (req, res) => {
                         res.status(500).json({ message: 'Internal Server Error!', err });
             }
 })
+
+
 
 module.exports = app;

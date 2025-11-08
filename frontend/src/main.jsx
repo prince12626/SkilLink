@@ -7,11 +7,9 @@ import ServiceProvider from './context/ServiceContext.jsx'
 
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <ServiceProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ServiceProvider>
-  </StrictMode>,
+  <ServiceProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </ServiceProvider>
 )

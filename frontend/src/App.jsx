@@ -6,7 +6,7 @@ import { Signup } from './pages/Signup'
 import { useServices } from './context/ServiceContext'
 import Service from './pages/Service'
 
-const App = () => {
+export const App = () => {
   return (
     <div className='bg-[#151A28] relative h-auto w-screen'>
       <Navbar />

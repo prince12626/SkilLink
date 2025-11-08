@@ -8,15 +8,15 @@ const ServiceProvider = ({ children }) => {
   const [services, setServices] = useState([])
   const getServices = async () => {
     const res = await axios.get(uri + "/service/getall");
-      setServices(res);
+      setServices(res.data);
   }
 
   useEffect(() => {
-    getServices()
+    getServices();
   }, [])
 
   return (
-    <serviceContext.Provider value={services}>
+    <serviceContext.Provider value={{services}}>
       {children}
     </serviceContext.Provider>
   )
@@ -25,5 +25,9 @@ const ServiceProvider = ({ children }) => {
 export default ServiceProvider
 
 export const useServices = () => {
-  useContext(serviceContext)
+  const context = useContext(serviceContext);
+  if (!context) {
+    throw new Error("useServices must be used within a ServiceProvider");
+  }
+  return context;
 }

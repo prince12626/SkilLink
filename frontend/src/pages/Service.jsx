@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {useServices} from "../context/ServiceContext"
 
 const Service = () => {
-    const data = useServices();
-    console.log(data)
+    const {services} = useServices();
+
+    useEffect(()=>{console.log(services)}, [services])
+
   return (
     <div className='h-screen w-screen max-w-[90%] mx-auto flex'>
         <div className="mt-30">
